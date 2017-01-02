@@ -8,7 +8,17 @@ function onetone_get_background($args){
 $background = "";
  if (is_array($args)) {
 	if (isset($args['image']) && $args['image']!="") {
-	$background .=  "background:url(".$args['image']. ")  ".$args['repeat']." ".$args['position']." ".$args['attachment'].";";
+  // Jesús: Changed becouse don´t work well
+	//$background .=  "background:url(".$args['image']. ")  ".$args['repeat']." ".$args['position']." ".$args['attachment'].";";
+    
+  // New code
+	$background .=  "background-image:url(".$args['image']. ");";    
+	if( !$parallax_scrolling == "yes" || !$parallax_scrolling == "1" ){
+    $background .=  "background-repeat:".$args['repeat']. ";";
+    $background .=  "background-position:".$args['position']. ";";
+    $background .=  "background-attachment:".$args['attachment']. ";";
+	 }
+  //
 	}
 	
 	if(isset($args['color']) && $args['color'] !=""){
