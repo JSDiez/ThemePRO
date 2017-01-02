@@ -71,10 +71,10 @@
 		}
 		
 		</script>
-		<p class="black-65" id="video-controls">
-		  <a class="youtube-pause command" id="togglePlay" href="javascript:;" onclick="jQuery(\'#onetone-youtube-video\').YTPTogglePlay(changeLabel)"><i class="fa fa-'.$play_btn_icon.'"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="black-65" id="video-controls">
+		  <a class="youtube-pause command" id="togglePlay" href="javascript:;" onclick="jQuery(\'#onetone-youtube-video\').YTPTogglePlay(changeLabel)"><i class="fa fa-'.$play_btn_icon.'"></i></a>
 		  <a class="youtube-volume" href="javascript:;" onclick="toggleVolume();"><i class="fa fa-'.$mute_btn_icon.' "></i></a>
-	  </p>';
+	  </div>';
 	 }
 	  }
 	 
