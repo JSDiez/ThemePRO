@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
@@ -76,7 +76,13 @@
                             <?php  onetone_get_topbar_content( $top_bar_left_content );?>                      
                         </div>
                         <div class="top-bar-right">
-                          <?php onetone_get_topbar_content( $top_bar_right_content );?>
+                          <?php onetone_get_topbar_content( $top_bar_right_content );?>                          
+                          <?php
+                          	// Jesus: Added to receive widget "Aparece en Todas Partes"
+                          	if(is_active_sidebar("displayed_everywhere")){
+                              dynamic_sidebar("displayed_everywhere");
+                            }
+                          ?>
                         </div>
                     </div>
                 </div>
@@ -84,30 +90,32 @@
                 
                 <div class="main-header <?php echo $header_background_parallax; ?>">
                     <div class="<?php echo $header_container; ?>">
-                        <div class="logo-box">
+
+                      <h1 class="logo-box">
                         <?php if( $logo ):?>
-                        
-                            <a href="<?php echo esc_url(home_url('/')); ?>">
+
+                          <a href="<?php echo esc_url(home_url('/')); ?>" id="logo">
                             <img class="site-logo normal_logo" alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logo); ?>" />
-                            </a>
-                             <?php
-							
-					if( $logo_retina ):
-					$pixels ="";
-					if(is_numeric(onetone_option('retina_logo_width')) && is_numeric(onetone_option('retina_logo_height'))):
-					$pixels ="px";
-					endif; ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
-					<img src="<?php echo $logo_retina; ?>" alt="<?php bloginfo('name'); ?>" style="width:<?php echo onetone_option('retina_logo_width').$pixels; ?>;max-height:<?php echo onetone_option('retina_logo_height').$pixels; ?>; height: auto !important" class="site-logo retina_logo" />
-					 </a>
-                     <?php endif;?>
-                            <?php endif;?>
-                            <div class="name-box" style=" display:block;">
-                                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="site-name"><?php bloginfo('name'); ?></h1></a>
-                                <span class="site-tagline"><?php bloginfo('description'); ?></span>
-                            </div>
-                             
-                        </div>
+                            <div class="name-box">
+                              <span class="site-name"><?php bloginfo('name'); ?></span>
+                              <span class="site-tagline"><?php bloginfo('description'); ?></span>
+                             </div>
+                          </a>
+                          <?php
+
+                          if( $logo_retina ):
+                            $pixels ="";
+                          if(is_numeric(onetone_option('retina_logo_width')) && is_numeric(onetone_option('retina_logo_height'))):
+                            $pixels ="px";
+                          endif; ?>
+                          <a href="<?php echo esc_url(home_url('/')); ?>">
+                            <img src="<?php echo $logo_retina; ?>" alt="<?php bloginfo('name'); ?>" style="width:<?php echo onetone_option('retina_logo_width').$pixels; ?>;max-height:<?php echo onetone_option('retina_logo_height').$pixels; ?>; height: auto !important" class="site-logo retina_logo" />
+                          </a>
+                        <?php endif;?>
+                      <?php endif;?>
+                    </h1>
+
+
                         <button class="site-nav-toggle">
                             <span class="sr-only"><?php _e( 'Toggle navigation', 'onetone' );?></span>
                             <i class="fa fa-bars fa-2x"></i>

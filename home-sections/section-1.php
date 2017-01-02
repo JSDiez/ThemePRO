@@ -48,7 +48,7 @@
 		?>
        <div class="<?php echo $onetone_animated; ?>" data-animationduration="0.9" data-animationtype="bounceInDown" data-imageanimation="no">
         <div style="text-align:center;color:<?php echo $color; ?>;">
-          <div style="font-family: 'Lustria',serif;">
+          <div>
             <h1 class="magee-heading heading-border section-title "><span class="heading-inner"><?php echo do_shortcode($section_title);?></span></h1>
           </div>
           <p style="margin-top: 50px; " class="home-section-content"><?php echo do_shortcode($section_subtitle);?></p>

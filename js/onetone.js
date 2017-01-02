@@ -259,23 +259,23 @@ $('.variations_form .single_add_to_cart_button').prepend('<i class="fa fa-shoppi
 jQuery(window).scroll(function(){
 							   
 		if( jQuery("body.admin-bar").length ){
-		if( jQuery(window).width() < 765 ) {
-				stickyTop = 46;
-			} else {
-				stickyTop = 32;
-			}
-	  }
-	  else{
+      if( jQuery(window).width() < 765 ) {
+          stickyTop = 46;
+        } else {
+          stickyTop = 32;
+        }
+    }else{
 		        stickyTop = 0;
-		  }
-		  var scrollTop = $(window).scrollTop(); 
-				if (scrollTop > stickyTop) { 
-				    $('.fxd-header').css({'top':stickyTop}).show();
-					$('header').addClass('fixed-header');
-				}else{
-					$('.fxd-header').hide();
-					$('header').removeClass('fixed-header');
-					}
+		}
+  
+    var scrollTop = $(window).scrollTop(); 
+    if (scrollTop > 200) { 
+      $('.fxd-header').css({'top':stickyTop}).show();
+      $('header').addClass('fixed-header');
+    }else{
+      $('.fxd-header').hide();
+      $('header').removeClass('fixed-header');
+    }
  });
  
 

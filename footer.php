@@ -40,8 +40,8 @@
 					</div>
                      <div class="site-social pull-right">
                       <?php 
-							echo onetone_get_social( 'footer', '','top','_blank');
-							?>
+                      	echo onetone_get_social( 'footer', '','top','_blank');
+                      ?>
                        </div>
                     
                      

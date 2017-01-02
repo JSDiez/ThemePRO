@@ -21,10 +21,6 @@ OneTone Pro Wordpress theme is released under the terms of GNU GPL.
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
 	margin: 0;
 	outline: 0;
 	padding: 0;
@@ -981,6 +977,11 @@ img.site-logo {
 .main-header {
 	background-image:;
 	width: 100%;
+  
+  top: -100px;
+  
+  transition: top 0.3s linear;
+  -webkit-transition: top 0.3s linear;
 }
 
 .header-wrap.overlay {
@@ -1046,15 +1047,12 @@ img.site-logo {
 	}
 }
 
-.fixed-header .main-header {
-	display:none;
-}
 
 /*
  * 2.5 Fixed header
  */
 
-.fxd-header {
+.fxd-header, .fixed-header .main-header {
 	background-color: rgba(0,0,0,.7);
 	position: fixed;
 	top: 0; left: 0;
@@ -1063,6 +1061,19 @@ img.site-logo {
 	z-index: 999;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
+
+.fixed-header .main-header h1 a img {
+  display: none;
+}
+
+.fixed-header .main-header h1 #logo {
+	background: url(http://52.27.163.227/NuevaWeb/wp-content/uploads/2016/12/logo_white.png);
+  display: inline-block;
+  height: 29px;
+  margin-top: 8px;
+  width: 121px;
+}
+  
 
 @media screen and (min-width: 920px) {
 	.fxd-header{
@@ -2876,4 +2887,671 @@ border:none;
         padding: 5px 0;
         border-bottom: 2px solid #963;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  color: #7A797A;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+h1.logo-box {
+	margin: 0;
+}
+
+h1.logo-box img.site-logo {
+	margin: 6px 10px 10px 0;
+}
+
+
+/* TITLES - FONTS */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 30px;
+	margin: 0 0 20px 0;
+}
+
+.title-left .page-title {
+  float: none;
+}
+
+body.page .page-title h1,.content-title h1 {
+  color: #5E5E5E;
+  font-size: 46px;
+}
+
+
+
+/*Header*/
+.header-wrap {
+  min-height: 96px;
+	position: relative;
+}
+
+.top-bar-sns, .qtranxs_widget {
+	display: inline-block;
+	line-height: 2.4;
+  vertical-align: middle;
+}
+
+.top-bar-sns a {
+	color: #B5404E;
+  font-size: 1.2em;
+}
+
+.qtranxs_widget {
+	margin-left: 10px;
+}
+
+.qtranxs_widget select {
+	border: 0;
+}
+
+.main-header .site-nav a {
+  color: #5E5E5E!important;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.fixed-header .main-header .site-nav a {
+  color: #FFF!important;
+}
+
+.fxd-header .logo-box a {
+	background: url(http://52.27.163.227/NuevaWeb/wp-content/uploads/2016/12/logo_white.png);
+	display: block;
+  height: 29px;
+  width: 121px;
+}
+
+.fixed-header .main-header {
+    display: block;
+  padding: 12px 0;
+}
+
+
+
+/* MAIN MENU */
+#menu-main li a {
+	position: relative;
+}
+
+#menu-main li a:after {
+  content: "";
+  background: #B5404E;
+	position: absolute;
+  bottom: -12px;	left: 50%;
+  height: 4px;
+  opacity: 0;
+  width: 0;
+  
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+}
+
+#menu-main li a:hover:after, #menu-main li.active a:after, #menu-main li.current-menu-item a:after {
+  content: "";
+  left: 0;
+  opacity: 1;
+  width: 100%;
+}
+
+.home #menu-main li:first-child, .home #menu-main .menu-item {
+	display: none; /* tmp style*/
+}
+
+.bg-video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.homepage section {
+   /* max-width: 1170px;*/
+    margin: auto;
+  
+}
+.post-main {
+   background: #ffffff;
+}
+
+
+/* COMMOM UI */
+.btn {
+	border: 0!important;
+  border-radius: 0;
+  color: #FFF;
+  background: #AD2F3F!important;
+  line-height: 2.5!important;
+  text-transform: uppercase!important;
+  transition: all .2s linear;
+}
+
+.btn.btn-secondary:hover, .btn.btn-secondary:focus {
+  background: #cb1f36!important;
+	box-shadow: .2px 4px 20px rgba(0,0,0,.5);
+  color: #FFF!important;
+}
+
+.cdp-cookies-alerta .btn.btn-secondary {
+  background: none!important;
+	border: 1px solid #FFF!important;
+  color: #FFF;
+  font-size: 0.8em;
+  text-transform: uppercase!important;
+}
+
+.widget-box {
+    overflow: visible;
+}
+
+.breadcrumbs {
+	display: none;
+}
+
+.feature-img-box, .feature-img-box {
+    margin-bottom: 0;
+}
+
+.page-title-bar {
+  border: 0!important;
+}
+
+.post-inner, .page-inner {
+	padding: 0!important;
+}
+
+
+
+
+/*MÓDULO 6 CAJAS*/
+.modulo-6-cajas {
+  margin:22px auto 0 auto;
+}
+.modulo-6-cajas .row >div {
+    padding:0;
+    margin:0;
+}
+.modulo-6-cajas .row + .row {
+    margin-top: 0px;
+}
+.modulo-6-cajas .caja-texto {
+    padding: 0;
+    margin: 0;
+    height: 390px;
+    text-align: left;
+    padding: 30px;
+    font-family: 'Open sans';
+}
+.modulo-6-cajas .caja-texto h3 {
+    margin: 0 auto 40px auto;
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 2.2em;
+    font-weight: 200;
+}
+.modulo-6-cajas .caja-texto a {
+  color:#ffffff;
+  display: block;
+}
+.modulo-6-cajas .caja-texto a:hover {
+  opacity:0.4; 
+}
+.modulo-6-cajas .caja-texto.negra {
+    background: #282727;
+}
+.modulo-6-cajas .caja-texto.roja {
+    background: #DE253E;
+}
+
+.modulo-6-cajas .caja-texto.gris {
+    background:#797878;
+}
+
+
+#what-do-it .container {
+	padding-right: 0;
+  padding-left: 0;
+}
+
+#what-do-it h2 {
+  background: #c11e42;
+  padding: 24px 0;
+  position: relative;
+}
+
+#what-do-it h2:after {
+  content: "";  
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #c11e42;
+  
+  position: absolute;
+  bottom: -20px; left: 50%;
+  margin-left: -20px;
+  
+  height: 0;
+  width: 0;
+}
+
+
+
+/*SECCIÓN TRABAJA CON NOSOTROS*/
+#work-with-us {
+  height:684px;
+}
+
+#work-with-us .section-title {
+    margin: 220px 0px 50px 0;
+}
+
+#work-with-us .home-section-content {
+    max-width: 300px;
+    margin: auto;
+}
+
+#work-with-us .home-section-content button.btn {
+  background: #DE253E;
+  border:none;
+  color: #ffffff!important;
+	margin: 20px 0 0 0;
+  padding: 0px 30px;
+}
+
+
+/* CUSTOMERS HOME SECTION*/
+.customers {}
+
+.icon-customer-container {
+	margin-top: 50px;
+}
+
+.customers a:hover {
+  opacity: 0.5;
+}
+
+
+
+
+
+
+/* FOOTER */
+footer {
+  background: url(http://52.27.163.227/NuevaWeb/wp-content/uploads/2016/10/footer.jpg) no-repeat center #272526;
+  background-size: cover;
+  z-index: inherit;
+}
+
+#menu-footer a {
+  font-size: 1em;
+	font-weight: bold;
+  padding: 10px 0;
+}
+
+#menu-footer a:before {
+  content: "";
+  background: #7a797a;
+  border-radius: 50%;
+  display: inline-block;
+  height: 5px;
+  margin: 0 16px;
+  vertical-align: middle;
+  width: 5px;
+}
+
+
+#menu-footer li:first-child a:before {
+  display: none;
+}
+
+footer a {
+  color: #FFF !important;
+}
+
+footer a:hover, footer .polity a:hover {
+  color: #de253e!important;
+}
+
+footer .polity a {
+  font-weight: 700;
+  color: #999999!important;
+  text-decoration: underline;
+}
+
+footer ul#menu-footer {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Open Sans";
+  border-top: 1px dashed #666;
+  border-bottom: 1px dashed #666;
+  margin: 0;
+  padding: 20px 0;
+}
+
+footer h6 {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+footer a:hover span, footer a:hover i {
+  color: #de253e;
+}
+
+footer h6 span {
+  font-weight: 700;
+  font-size: 17px;
+  display: initial;
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+footer hr {
+  border-style: dashed;
+  border-color: #666;
+}
+
+footer li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer li.social {
+  margin: 0 3px;
+}
+
+footer li.social.social-fa-twitter {
+  margin-left: 40px;
+}
+
+footer li.social a {
+  font-size: 22px;
+}
+
+footer li a {
+  font-size: 17px;
+}
+
+footer li span.circle {
+  width: 5px;
+  height: 5px;
+  background: #7a797a;
+  border-radius: 50%;
+  display: block;
+  margin: 0 16px;
+}
+
+footer .copyright {
+  clear: both;
+  background-color: #000;
+  margin-top: 18px;
+  padding: 0 55px;
+}
+
+footer .copyright p {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+  padding: 12px 0;
+}
+
+
+
+
+footer h1, footer h2, footer h3, footer h4 {
+  font-family: 'Yanone Kaffeesatz';
+  color: #999;
+}
+
+ footer h3 {
+  font-size: 34px;
+}
+
+
+/* CONTACT FORM */
+footer .wpcf7 {
+	padding: 0 16px;
+}
+
+.acceptance-check input {
+	height: 16px;
+	width: 16px;
+}
+
+.wpcf7-form {
+	position: relative;
+}
+
+footer .form-group label:focus + span:focus {
+  color: white;
+}
+
+footer label {
+  font-family: 'Yanone Kaffeesatz';
+  color: #999;
+  font-size: 23px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+footer label.polity {
+	Font-size: 18px;
+}
+
+footer label:first-child {
+  margin-top: 0px;
+}
+
+footer textarea.form-control,
+footer input.form-control {
+  background: transparent;
+  color: #CCC;
+  position: relative;
+}
+
+footer textarea.form-control:focus,
+footer input.form-control:focus {
+  background: transparent;
+  border-color: #FFFFFF;
+}
+
+
+.wpcf7-form-control-wrap {
+    display: block;
+}
+
+.wpcf7-form-control-wrap.acceptance-check {
+    display: inline-block;
+}
+
+.wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
+  color: #DE253E;
+  font-size: 12px;
+	position: absolute;
+  bottom: -20px;	left: 0;
+}
+
+.wpcf7-not-valid {
+  border: 1px solid #DE253E;
+}
+
+.wpcf7 textarea.form-control {
+    height: 142px;
+}
+
+div.wpcf7 img.ajax-loader {
+	display: none!important;
+}
+
+.wpcf7-response-output {
+	font-size: 12px;
+  text-align: center;
+  margin: 0;
+  
+  position: absolute;
+  bottom: -24px;	left: 0;
+  
+  width: 100%;
+}
+
+div.wpcf7-validation-errors {
+  border: 1px solid #f7e700;
+}
+
+div.wpcf7-mail-sent-ok {
+    border: 1px solid #398f14;
+}
+
+
+.polities-panel {
+  border-left: 4px solid #DE253E;
+  padding-left: 10px;
+}
+
+.footer-info-area {
+  color: #ADADB2;
+  padding: 20px 0;
+  background: #000;
+}
+
+
+.address p {
+  margin: 0;
+  color: #B1B1B1;
+}
+
+
+/* MODAL */
+.modal-header .close {
+  margin-top: -2px;
+  color: #FFF;
+  opacity: .5;
+  font-size: 3em;
+  margin-bottom: -33px;
+}
+
+.modal-header .close:hover {
+  opacity: 0.8;
+}
+
+.modal-open {
+	padding-right: 0!important;
+}
+
+.modal-map .modal-dialog {
+	width: 740px!important;
+}
+
+.modal-content {
+	background: #000;
+}
+
+.modal-header h4 {
+	color:#FFF;	
+  font-weight: bold;
+}
+
+.modal-header h4 i {
+	margin-right: 6px;
+}
+
+
+
+/* BACK TO TOP*/
+#back-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #222;
+  font-size: 24px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#back-to-top span {
+  display: none;
+}
+
+#back-to-top span.fa {
+  display: inline-block;
+}
+
+
+/* PADDING-MARGINS */
+.pls {
+  padding-left: 15px;
+}
+
+.pvl {
+  padding: 0 10%;
+}
+
+.pbl {
+	padding-bottom: 64px;
+}
+
+
+/* BORDERS */
+.brd1 {
+	border-bottom: 1px solid #F1F1F1;
+}
+
+
+
+/**MEDIA QUERIES */
+@media screen and (max-width: 800px) {
+    .modulo-6-cajas .caja-texto {
+     max-width: 390px;
+    margin: auto;
+     }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px)  {
+    .modulo-6-cajas .caja-texto {
+      height:250px;
+     }
+}
+ 
+@media screen and (min-width: 1000px)  and (max-width: 1200px)  {
+    .modulo-6-cajas .caja-texto {
+      height:324px;
+     }
+
 }

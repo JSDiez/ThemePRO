@@ -89,7 +89,7 @@ global $onetone_animated;
 		else:
 		?>
         <?php if( $section_title != '' ):?>
-        <div class="section-title"><?php echo do_shortcode($section_title);?></div>
+        <h2 class="section-title"><?php echo do_shortcode($section_title);?></h2>
         <?php endif;?>
           
             <div class="home-section-content">

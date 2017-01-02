@@ -48,6 +48,15 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+    <!-- Changed php -->
+    <?php if (  has_post_thumbnail() ): ?>
+    <div class="feature-img-box">
+      <div class="img-box">
+        <?php the_post_thumbnail();?>
+      </div>
+    </div>
+    <?php endif;?>
+    <!-- Changed php -->
 
 <?php if( $enable_page_title_bar == 'yes' ):?>
   
@@ -78,13 +87,6 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
           <section class="post-main" role="main" id="content">
             <?php while ( have_posts() ) : the_post(); ?>
             <article class="post type-post" id="" role="article">
-              <?php if (  has_post_thumbnail() ): ?>
-              <div class="feature-img-box">
-                <div class="img-box">
-                  <?php the_post_thumbnail();?>
-                </div>
-              </div>
-              <?php endif;?>
               <div class="entry-main">
             
                 <div class="entry-content">

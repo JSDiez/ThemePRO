@@ -35,6 +35,8 @@
 <section class="section home-section-<?php echo $video_background_section;?>  onetone-youtube-section video-section">
 <div id="onetone-youtube-video" class="onetone-player" data-property="{videoURL:'<?php echo $section_background_video;?>',containment:'<?php echo $containment;?>', showControls:false, autoPlay:<?php echo $youtube_autoplay;?>, loop:<?php echo $youtube_loop;?>, mute:<?php echo $youtube_mute;?>, startAt:<?php echo $start_play;?>, opacity:1, addRaster:true, quality:'default'}"></div>
 
+  	<div class="bg-video"></div>
+  
     <?php get_template_part('home-sections/section',$video_background_section);?>
   <div class="clear"></div>
    <?php 
