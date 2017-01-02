@@ -51,21 +51,24 @@
           <div>
             <h1 class="magee-heading heading-border section-title "><span class="heading-inner"><?php echo do_shortcode($section_title);?></span></h1>
           </div>
-          <p style="margin-top: 50px; " class="home-section-content"><?php echo do_shortcode($section_subtitle);?></p>
-          <div style="margin-top: 50px;">
-            <br />
+          <p class="home-section-content"><?php echo do_shortcode($section_subtitle);?></p>
+          <div>
             <?php if( $btn_text != ''):?>
             <a href="<?php echo esc_url($btn_link);?>" target="<?php echo esc_attr($btn_target);?>" class=" magee-btn-normal btn-lg btn-line btn-light" style="text-decoration: none;"><?php echo do_shortcode($btn_text);?></a> 
                <?php endif;?>
             </div>
-          <div class="banner-sns" style="margin-top: 50px;">
+          <div class="banner-sns">
           <ul>
            <?php 
 		   for( $s=0;$s<6;$s++ ):
 		   
 		   $icon       = onetone_option( "section_social_icon_".$i."_".$s );
            $link       = onetone_option( "section_icon_link_".$i."_".$s );
-           echo ' <li><a href="'.esc_url($link).'" target="_blank"><i class="fa fa-2 '.esc_attr($icon).'">&nbsp;</i></a></li>';
+            // Jesús: Added if - Only print <li> width info
+            if($icon != '') {
+           		echo ' <li><a href="'.esc_url($link).'" target="_blank"><i class="fa fa-2 '.esc_attr($icon).'">&nbsp;</i></a></li>';
+            };
+            //
 		   endfor;
 		   ?>
            </ul>
