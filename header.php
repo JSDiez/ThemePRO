@@ -55,6 +55,10 @@
  if( is_front_page() )
  $body_class  = 'page homepage';
  
+  
+ if( !is_front_page() )
+ $body_class  = 'page not-home';
+  
  $header_container = 'container';
  if( $header_fullwidth == 1)
  $header_container = 'container-fluid';
