@@ -125,7 +125,9 @@ add_action( 'after_setup_theme', 'onetone_setup' );
 	}
 	
 	wp_enqueue_style('onetone-ms',  get_template_directory_uri() .'/css/onetone-ms.css', false, $theme_info->get( 'Version' ), false);
-	wp_enqueue_style('onetone-scheme',  get_template_directory_uri() .'/css/scheme.less', array('magee-shortcode'), $theme_info->get( 'Version' ), false);
+   
+  // Jesús: Disable less theme file
+	//wp_enqueue_style('onetone-scheme',  get_template_directory_uri() .'/css/scheme.less', array('magee-shortcode'), $theme_info->get( 'Version' ), false);
 	wp_enqueue_style('onetone-home',  get_template_directory_uri() .'/css/home.css', false, $theme_info->get( 'Version' ), false);
 	
 	if ( is_rtl() ) {
