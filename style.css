@@ -63,7 +63,7 @@ input,
 select,
 textarea {
 	color: #555;
-	font-family: 'selfFont', 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	line-height: 1.8;
 	outline: none;
@@ -82,7 +82,7 @@ body {
 }
 
 a {
-	color: #963;
+	color: #C23442;
 	text-decoration: none;
 }
 
@@ -2301,6 +2301,11 @@ section.section{
     width: 333px;
 }
 
+#video-controls a {
+	display: inline-block;
+  padding-right: 16px;
+}
+
 #video-controls i.fa{
 	font-size:20px;
 	vertical-align: middle;
@@ -3094,6 +3099,11 @@ body.page .page-title h1,.content-title h1 {
 }
 
 
+/* HOME */
+#home-header {
+	min-height: 660px!important;
+}
+
 
 
 /*MÓDULO 6 CAJAS*/
@@ -3146,8 +3156,8 @@ body.page .page-title h1,.content-title h1 {
 }
 
 #what-do-it h2 {
-  background: #c11e42;
-  padding: 24px 0;
+  background: #C23442;
+  padding: 10px 0 16px;
   position: relative;
 }
 
@@ -3155,7 +3165,7 @@ body.page .page-title h1,.content-title h1 {
   content: "";  
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 20px solid #c11e42;
+  border-top: 20px solid #C23442;
   
   position: absolute;
   bottom: -20px; left: 50%;
@@ -3327,16 +3337,16 @@ footer .copyright p {
 }
 
 
-
-
 footer h1, footer h2, footer h3, footer h4 {
-  font-family: 'Yanone Kaffeesatz';
   color: #999;
 }
 
  footer h3 {
   font-size: 34px;
 }
+
+
+
 
 
 /* CONTACT FORM */
