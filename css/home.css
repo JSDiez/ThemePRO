@@ -1,13 +1,17 @@
+/* Extra hom page´s styles - theme configuration*/ 
 .section-subtitle{
 	text-align:center;
 	padding-bottom: 30px;
-	}
+}
+
 .section-title.no-subtitle{
 	padding-bottom:30px;
-	}
+}
+
 section.verticalmiddle .section-content {
     vertical-align: middle;
 }
+
 section.fullheight .section-content {
     display: table-cell;
     width: 100%;
@@ -15,18 +19,21 @@ section.fullheight .section-content {
     overflow: hidden;
 }
 
-.home-section-1 .magee-heading{
-	font-size:64px;
-	font-weight:400;
+.home-section-1 .magee-heading {
+	font-size: 80px!important;
+	font-weight: 700!important;
 	margin-top:0;
-	margin-bottom:30px;
 	color: #fff;
 	border-color: #fff;
 	text-align: center;
 }
+
 .home-section-1 .heading-border .heading-inner {
-	border-width: 1px;
+	border-width: 0;
+  letter-spacing: 3px;
+  word-spacing: 4px;
 }
+
 .home-section-1 .heading-doubleline .heading-inner:before,
 .home-section-1 .heading-doubleline .heading-inner:after {
 	border-color: #fff;
