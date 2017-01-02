@@ -120,8 +120,8 @@ h2 {
 }
 
 h3 {
-	font-size: 24px;
-	line-height: 1.1;
+	font-size: 32px;
+	line-height: 1.2;
 }
 
 h4 {
@@ -3064,7 +3064,7 @@ body.page .page-title h1,.content-title h1 {
   width: 100%;
 }
 
-.home #menu-main li:first-child, .home #menu-main .menu-item {
+.homepage #menu-main li.onetone-menuitem {
 	display: none; /* tmp style*/
 }
 
@@ -3081,6 +3081,12 @@ body.page .page-title h1,.content-title h1 {
 
 
 /* COMMOM UI */
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
 	border: 0!important;
   border-radius: 0;
@@ -3109,8 +3115,8 @@ body.page .page-title h1,.content-title h1 {
 	color: #FFF!important;  
 }
 
-.btn.btn-secondary:hover, .btn.btn-secondary:focus {
-  background: #cb1f36!important;
+.btn.btn-secondary:hover, .btn.btn-secondary:focus,.btn-primary:hover, .btn-primary:focus {
+  background: #a21d2b!important;
 	box-shadow: .2px 4px 20px rgba(0,0,0,.5);
   color: #FFF!important;
 }
@@ -3154,15 +3160,14 @@ body.page .page-title h1,.content-title h1 {
 
 /* Who are*/
 #who-are h2 {
-	padding-top: 16px;
+	padding-top: 32px;
+  margin: 0;
 }
 
 
 
 /* 6 BOXES MODULE*/
-.module-6-box {
-  margin:22px auto 0 auto;
-}
+.module-6-box {}
 
 .module-6-box .row >div {
     padding:0;
@@ -3173,7 +3178,7 @@ body.page .page-title h1,.content-title h1 {
     margin-top: 0px;
 }
 
-.module-6-box .caja-texto {
+.module-6-box .text-box {
     padding: 0;
     margin: 0;
     height: 390px;
@@ -3182,32 +3187,30 @@ body.page .page-title h1,.content-title h1 {
     font-family: 'Open sans';
 }
 
-.module-6-box .caja-texto h3 {
-    margin: 0 auto 40px auto;
-    font-family: 'Yanone Kaffeesatz';
+.module-6-box .text-box h3 {
+    margin-bottom: 40px;
     font-size: 2.2em;
-    font-weight: 200;
 }
 
-.module-6-box .caja-texto a {
+.module-6-box .text-box a {
   color:#ffffff;
   display: block;
 }
 
-.module-6-box .caja-texto a:hover {
+.module-6-box .text-box a:hover {
   opacity:0.4; 
 }
 
-.module-6-box .caja-texto.negra {
+.bg-black {
     background: #282727;
 }
 
-.module-6-box .caja-texto.roja {
+.bg-red {
     background: #DE253E;
 }
 
-.module-6-box .caja-texto.gris {
-    background:#797878;
+.bg-grey {
+    background: #797878;
 }
 
 
@@ -3238,27 +3241,18 @@ body.page .page-title h1,.content-title h1 {
 
 
 
-/*SECCIÓN TRABAJA CON NOSOTROS*/
+/* WORk WITH US SECTION*/
 #work-with-us {
-  height:684px;
-}
-
-#work-with-us .section-title {
-    margin: 220px 0px 50px 0;
+  height: 684px;
+  height: 90vh;
 }
 
 #work-with-us .home-section-content {
-    max-width: 300px;
-    margin: auto;
+  margin: 0 auto;
+  max-width: 440px;
 }
 
-#work-with-us .home-section-content button.btn {
-  background: #DE253E;
-  border:none;
-  color: #ffffff!important;
-	margin: 20px 0 0 0;
-  padding: 0px 30px;
-}
+
 
 
 /* CUSTOMERS HOME SECTION*/
@@ -3326,11 +3320,11 @@ footer ul#menu-footer {
   font-family: "Open Sans";
   border-top: 1px dashed #666;
   border-bottom: 1px dashed #666;
-  margin: 0;
+  margin: 24px 0;
   padding: 20px 0;
 }
 
-footer h6 {
+footer h4 {
   cursor: pointer;
   margin-bottom: 5px;
 }
@@ -3339,9 +3333,8 @@ footer a:hover span, footer a:hover i {
   color: #de253e;
 }
 
-footer h6 span {
-  font-weight: 700;
-  font-size: 17px;
+footer h4 span {
+  font-size: 24px;
   display: initial;
   color: white;
   margin-left: 5px;
@@ -3591,11 +3584,11 @@ div.wpcf7-mail-sent-ok {
 }
 
 .phl {
-  padding: 80px 0;
+  padding: 94px 0;
 }
 
 .phm {
-  padding: 32px 0;
+  padding: 48px 0;
 }
 
 .pvl {
@@ -3607,15 +3600,15 @@ div.wpcf7-mail-sent-ok {
 }
 
 .ptm {
-	padding-top: 32px;
+	padding-top: 48px;
 }
 
 .pbl {
-	padding-bottom: 80px;
+	padding-bottom: 94px;
 }
 
 .mbm {
-	padding-bottom: 32px;
+	padding-bottom: 48px;
 }
 
 
@@ -3630,20 +3623,20 @@ div.wpcf7-mail-sent-ok {
 
 /**MEDIA QUERIES */
 @media screen and (max-width: 800px) {
-    .modulo-6-cajas .caja-texto {
+    .module-6-box .text-box {
      max-width: 390px;
     margin: auto;
      }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px)  {
-    .modulo-6-cajas .caja-texto {
+    .module-6-box .text-box {
       height:250px;
      }
 }
  
 @media screen and (min-width: 1000px)  and (max-width: 1200px)  {
-    .modulo-6-cajas .caja-texto {
+    .module-6-box .text-box {
       height:324px;
      }
 

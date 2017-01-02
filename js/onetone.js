@@ -522,8 +522,6 @@ $(".product-image").each(function() {
 					var win_height = $(window).height();
   				var navBar_height = $('.top-wrap').height();
           var win_height = win_height - navBar_height;
-          console.log(navBar_height);
-          console.log(win_height);
         }
 		 $(this).css({'height':section_height,'min-height':win_height});
      });
