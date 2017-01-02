@@ -87,14 +87,14 @@ a {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: 0;
 }
 
 a:hover,
 a:active {
 	outline: 0;
 	text-decoration: none;
-	color: #963;
+	color: #9c242f;
 }
 
 h1,
@@ -462,7 +462,7 @@ hr {
 }
 
 ::selection {
-	background: #963;
+	background: #000;
 	color: #fff;
 	text-shadow: none;
 }
@@ -2297,13 +2297,26 @@ section.section{
  * 9.0 Video Background
  */
 
+.bg-video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
 #video-controls {
     width: 333px;
 }
 
 #video-controls a {
+  color: #FFF;
 	display: inline-block;
   padding-right: 16px;
+  opacity: 0.5;
+}
+
+#video-controls a:hover {
+  opacity: 1;
 }
 
 #video-controls i.fa{
@@ -2976,11 +2989,30 @@ body.page .page-title h1,.content-title h1 {
 }
 
 .qtranxs_widget {
-	margin-left: 10px;
+  font-size: 14px;
+	margin-left: 16px;
+  position: relative;
 }
 
 .qtranxs_widget select {
-	border: 0;
+  border: 0 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 16px;
+  width: auto;
+
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+.qtranxs_widget:after {
+  content: "\f078";
+  color: #CCC;
+  display: inline-block;
+  font: normal normal normal 12px/1 FontAwesome;
+  text-align: left;
+  position: absolute;
+  top: 10px;	right: 0;
 }
 
 .main-header .site-nav a {
@@ -3036,32 +3068,45 @@ body.page .page-title h1,.content-title h1 {
 	display: none; /* tmp style*/
 }
 
-.bg-video {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-}
-
 .homepage section {
    /* max-width: 1170px;*/
     margin: auto;
   
 }
+
 .post-main {
    background: #ffffff;
 }
+
 
 
 /* COMMOM UI */
 .btn {
 	border: 0!important;
   border-radius: 0;
-  color: #FFF;
-  background: #AD2F3F!important;
+  color: #FFF!important;
+  background: #C23442!important;
   line-height: 2.5!important;
   text-transform: uppercase!important;
   transition: all .2s linear;
+}
+
+.btn-primary {
+	font-size: 18px;
+  line-height: 3!important;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.btn-ghost.btn-primary {
+  background: transparent!important;
+	border: 1px solid #C23442!important;
+	color: #C23442!important;
+}
+
+.btn-ghost:hover {
+  background: #C23442!important;
+	color: #FFF!important;  
 }
 
 .btn.btn-secondary:hover, .btn.btn-secondary:focus {
@@ -3101,23 +3146,34 @@ body.page .page-title h1,.content-title h1 {
 
 /* HOME */
 #home-header {
-	min-height: 660px!important;
+	/*min-height: 660px!important;*/
+	min-height: 70vh!important;
 }
 
 
 
-/*MÓDULO 6 CAJAS*/
-.modulo-6-cajas {
+/* Who are*/
+#who-are h2 {
+	padding-top: 16px;
+}
+
+
+
+/* 6 BOXES MODULE*/
+.module-6-box {
   margin:22px auto 0 auto;
 }
-.modulo-6-cajas .row >div {
+
+.module-6-box .row >div {
     padding:0;
     margin:0;
 }
-.modulo-6-cajas .row + .row {
+
+.module-6-box .row + .row {
     margin-top: 0px;
 }
-.modulo-6-cajas .caja-texto {
+
+.module-6-box .caja-texto {
     padding: 0;
     margin: 0;
     height: 390px;
@@ -3125,27 +3181,32 @@ body.page .page-title h1,.content-title h1 {
     padding: 30px;
     font-family: 'Open sans';
 }
-.modulo-6-cajas .caja-texto h3 {
+
+.module-6-box .caja-texto h3 {
     margin: 0 auto 40px auto;
     font-family: 'Yanone Kaffeesatz';
     font-size: 2.2em;
     font-weight: 200;
 }
-.modulo-6-cajas .caja-texto a {
+
+.module-6-box .caja-texto a {
   color:#ffffff;
   display: block;
 }
-.modulo-6-cajas .caja-texto a:hover {
+
+.module-6-box .caja-texto a:hover {
   opacity:0.4; 
 }
-.modulo-6-cajas .caja-texto.negra {
+
+.module-6-box .caja-texto.negra {
     background: #282727;
 }
-.modulo-6-cajas .caja-texto.roja {
+
+.module-6-box .caja-texto.roja {
     background: #DE253E;
 }
 
-.modulo-6-cajas .caja-texto.gris {
+.module-6-box .caja-texto.gris {
     background:#797878;
 }
 
@@ -3524,18 +3585,40 @@ div.wpcf7-mail-sent-ok {
 }
 
 
-/* PADDING-MARGINS */
+/* PADDINGs-MARGINS */
 .pls {
   padding-left: 15px;
+}
+
+.phl {
+  padding: 80px 0;
+}
+
+.phm {
+  padding: 32px 0;
 }
 
 .pvl {
   padding: 0 10%;
 }
 
-.pbl {
-	padding-bottom: 64px;
+.pts {
+	padding-top: 20px;
 }
+
+.ptm {
+	padding-top: 32px;
+}
+
+.pbl {
+	padding-bottom: 80px;
+}
+
+.mbm {
+	padding-bottom: 32px;
+}
+
+
 
 
 /* BORDERS */
