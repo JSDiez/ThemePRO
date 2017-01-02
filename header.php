@@ -105,6 +105,8 @@
                             </div>
                             </a>
                              <?php
+													/*
+                          // Jesús: Disable logo retina becouse don´t work
 					if( $logo_retina ):
 					$pixels ="";
 					if(is_numeric(onetone_option('retina_logo_width')) && is_numeric(onetone_option('retina_logo_height'))):
@@ -113,7 +115,9 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>">
 					<img src="<?php echo $logo_retina; ?>" alt="<?php bloginfo('name'); ?>" style="width:<?php echo onetone_option('retina_logo_width').$pixels; ?>;max-height:<?php echo onetone_option('retina_logo_height').$pixels; ?>; height: auto !important" class="site-logo retina_logo" />
 					 </a>
-                     <?php endif;?>
+                     <?php endif;
+                          */
+                          ?>
                            <?php endif;?>                             
                         </h1>
                         <button class="site-nav-toggle">
