@@ -515,8 +515,16 @@ $(".product-image").each(function() {
  
  // section fullheight
 	var win_height = $(window).height();
+  
 	$("section.fullheight").each(function(){
          var section_height = $(this).height();
+    		if($(this).is('#home-header')) {
+					var win_height = $(window).height();
+  				var navBar_height = $('.top-wrap').height();
+          var win_height = win_height - navBar_height;
+          console.log(navBar_height);
+          console.log(win_height);
+        }
 		 $(this).css({'height':section_height,'min-height':win_height});
      });
 	
