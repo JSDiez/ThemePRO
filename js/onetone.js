@@ -696,6 +696,28 @@ http://www.gnu.org/licenses/gpl.html
     }
 	
 	 }*/
+  
+  
+  // Detect province selected in Job´s page  
+    function filterProvince(provinceVal) {
+      $(".job-item, .offers-list .clear").hide();
+      
+      $(".job-item").each(function(){
+      	if($(this).hasClass(provinceVal)){
+      		$(this).show();        	
+        }
+      });
+  	}
+  
+  $("#location-job-filter select").change(function() {    
+    var provinceVal = $("#location-job-filter :selected").val();
+    if(!provinceVal == "") {
+    	filterProvince(provinceVal);
+    }
+  });
+  
+  
+  
 	
 })(jQuery);
 

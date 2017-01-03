@@ -89,7 +89,19 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
                   <section class="job-container phm">
                   	<div class="container">
                   		<h1 class="content-title"><?php _e("[:es]Ofertas de trabajo[:en]Job offers"); ?></h1>
-                  		<h2 class="title-tagline"><?php _e("[:es]Éstas son nuestras vacantes actuales[:en]These are our current vacancies."); ?></h2>
+                  		<div class="row mbs">
+	                  		<h2 class="title-tagline col-sm-6 col-xs-12"><?php _e("[:es]Éstas son nuestras vacantes actuales[:en]These are our current vacancies."); ?></h2>                 		
+
+							<div id="location-job-filter" class="input-group pull-right">
+							    <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+								<select class="form-control">
+									<option value="">Filtra por localización</option>
+									<option value="barcelona">Barcelona</option>
+									<option value="madrid">Madrid</option>
+									<option value="sevilla">Sevilla</option>
+								</select>
+							</div>
+						</div>
 
                     <?php
                       function CallAPI($url) {
