@@ -43,6 +43,7 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+    <!-- Changed php -->
     <?php if (  has_post_thumbnail() ): ?>
     <div class="feature-img-box">
       <div class="img-box">
@@ -50,6 +51,7 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
       </div>
     </div>
     <?php endif;?>
+    <!-- Changed php -->
 
 <?php if( $enable_page_title_bar == 'yes' ):?>
   
@@ -86,11 +88,7 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
                     wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'onetone' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
                   ?>
                   
-                  <section class="job-container phm">
-                  	<div class="container">
-                  		<h1 class="content-title"><?php _e("[:es]Ofertas de trabajo[:en]Job offers"); ?></h1>
-                  		<h2 class="title-tagline"><?php _e("[:es]Éstas son nuestras vacantes actuales[:en]These are our current vacancies."); ?></h2>
-
+                  <div class="job-container">
                     <?php
                       function CallAPI($url) {
                           $curl = curl_init();
@@ -136,69 +134,37 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
                         curl_multi_exec($ch, $exec);
                       } while($exec > 0);
                      
-
-                      /* Dynamic select with job´s provinces
-                      echo '<select class="country">
-							<option value="">Filtra por porvincia</option>';
-							foreach($urls as $count => $url) {
-                          		$returned = json_decode(curl_multi_getcontent($curl_array[$count]));
-
-								$provinceArray = array();
-								$provinceValue = $returned->province->value;
-								if (isset($provinceArray[$provinceValue])) {echo $provinceValue;
-								} else {
-								echo '<option value="'.strtolower($returned->province->value).'">'.$returned->province->value.'</option>';
-								};
-							}
-						echo '</select>';
-						*/
-
-                      echo '<div class="offers-list grid-divider">';
+                      echo '<div class="table-responsive"><table class="table table-striped borderless" style="border: none"><tbody style="border: none">';
                       foreach($urls as $count => $url) {
-                          if( $count % 2 == 0) {
-                          	$jobPos = 'item-left';
-                          } else {
-                          	$jobPos = 'item-right';                          	
-                          }
                           $returned = json_decode(curl_multi_getcontent($curl_array[$count]));
-                          echo '<a href="' . $returned->link . '" target="_blank" id="job-offer-'.$count.'" class="job-item col-sm-6 col-xs-12 ' . strtolower($returned->province->value) .' '.$jobPos.'">
-                          		<div class="col-padding">
-                                <div class="job-location"><i class="fa fa-map-marker"></i>' . $returned->city . ' (' . $returned->province->value . ')</div>
-                                <h3>' . $returned->title  . '</h3>
-                                <span class="job-extra"> Jornada ' . $returned->journey->value;
+                          echo '<tr><td><p class="text-center">
+                                    <img class="marginless" src="http://52.27.163.227/wordpress/wp-content/uploads/2016/09/briefcase-1.png" alt="1" width="43"></p>
+                                </td>
+                                <td>
+                                <p class="text-center"><a href="' . $returned->link . '" target="_blank">' . $returned->title  . '</a></p></td>
+                                <td><p class="text-center">' . $returned->city . ' (' . $returned->province->value . ')</p></td>
+                                <td><p class="text-center"> Jornada ' . $returned->journey->value . '</p></td>';
 
                           if ($returned->contractType->value == "(Seleccionar)") { //SI no ha sido definidio tipo en infojobs
-                             echo '</span>';
+                             echo '<td></td>';
                           }
                           else{
-                            echo ' / Contrato ' . $returned->contractType->value . '</span>';
+                            echo '<td><p class="text-center"> Contrato ' . $returned->contractType->value . '</p></td>';
                           }
-                          echo '<p class="job-description">' . preg_replace('/[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]'.
+                          echo ' <td><p class="text-center">' . preg_replace('/[\x00-\x08\x10\x0B\x0C\x0E-\x19\x7F]'.
                                 '|[\x00-\x7F][\x80-\xBF]+'.
-                                '|([\xC0\xC1]|[\xF0-\xFF])[\x80-\xBF]*'.
-                                '|[\xC2-\xDF]((?![\x80-\xBF])|[\x80-\xBF]{2,})'.
-                                '|[\xE0-\xEF](([\x80-\xBF](?![\x80-\xBF]))|(?![\x80-\xBF]{2})|[\x80-\xBF]{3,})/S',
-                                '?', substr($returned->description, 0, 155)) . '...</p>'.
-                          		'<span class="btn btn-ghost">';
-                          		_e('[:es]Más información[:en]More info');
-                          		echo '</span>';
-                          echo '</div>';
-                          echo '</a>';
-                          if( ($count+1) % 2 == 0) {
-                          	echo '<p class="clear"></p>';
-                          }
+                                 '|([\xC0\xC1]|[\xF0-\xFF])[\x80-\xBF]*'.
+                                 '|[\xC2-\xDF]((?![\x80-\xBF])|[\x80-\xBF]{2,})'.
+                                 '|[\xE0-\xEF](([\x80-\xBF](?![\x80-\xBF]))|(?![\x80-\xBF]{2})|[\x80-\xBF]{3,})/S',
+                                 '?', substr($returned->description, 0, 155)) . '... <a href="' . $returned->link . '" target="_blank" class="inline">[LEER MAS]</a></p></td></tr>';
                       }
 
-                      echo '</div>';
+                      echo '</tbody></table></div>';
                     ?>
-                    </div>
-                    </section>
 
-                    <section id="job-form" class="bg-light-grey phm brd2">
-	                    <div class="container">
-	                      <?php echo do_shortcode('[contact-form-7 id="203" title="Job form general"]') ?>
-	                    </div>
-                    </section>
+                    <div id="job-form">
+                      <?php echo do_shortcode('[contact-form-7 id="203" title="Job form general"]') ?>
+                    </div>
                   </div>
                 </div>                
               </div>
@@ -225,5 +191,6 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
     </div>
   </div>
 </article>
+
 
 <?php get_footer(); ?>

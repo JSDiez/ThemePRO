@@ -48,7 +48,6 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-    <!-- Changed php -->
     <?php if (  has_post_thumbnail() ): ?>
     <div class="feature-img-box">
       <div class="img-box">
@@ -56,17 +55,14 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
       </div>
     </div>
     <?php endif;?>
-    <!-- Changed php -->
 
 <?php if( $enable_page_title_bar == 'yes' ):?>
   
   <section class="page-title-bar title-left no-subtitle" style="">
     <div class="container">
-      <hgroup class="page-title">
-        <h1>
-          <?php the_title();?>
-        </h1>
-      </hgroup>
+      <div class="page-title">
+        <h1 class="text-center"><?php the_title();?></h1>
+      </div>
       <?php if( $display_breadcrumb == 'yes' && !$detect->isMobile() ):?>
       <?php onetone_get_breadcrumb(array("before"=>"<div class=''>".$breadcrumb_menu_prefix,"after"=>"</div>","show_browse"=>false,"separator"=>$breadcrumb_menu_separator,'container'=>'div'));?>
        <?php endif;?>
