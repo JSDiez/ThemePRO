@@ -197,7 +197,7 @@ if( window.devicePixelRatio > 1 ){
  
 // BACK TO TOP 											
  $(window).scroll(function(){
-		if($(window).scrollTop() > 200){
+		if($(window).scrollTop() > 300){
 			$("#back-to-top").fadeIn(200);
 		} else{
 			$("#back-to-top").fadeOut(200);
@@ -327,7 +327,7 @@ $('header .fxd-header .site-nav ul').onePageNav({filter: 'a[href^="#"]',scrollTh
 /*  smooth scrolling  btn       	  								  	    */
 /* ------------------------------------------------------------------------ */
 
-  $("div.page a[href^='#'],div.post a[href^='#'],div.home-wrapper a[href^='#'],.banner-scroll a[href^='#']").on('click', function(e){
+  $("div.page a[href^='#'],div.post a[href^='#'],div.home-wrapper a[href^='#'],.banner-scroll a[href^='#'], .go-to-item").on('click', function(e){
 				var selectorHeight = $('header').height();   
 				var scrollTop = $(window).scrollTop(); 
 				e.preventDefault();
@@ -704,7 +704,7 @@ http://www.gnu.org/licenses/gpl.html
       
       $(".job-item").each(function(){
       	if($(this).hasClass(provinceVal)){
-      		$(this).show();        	
+      		$(this).fadeIn();        	
         }
       });
   	}
