@@ -11,17 +11,17 @@ if( $right_sidebar )
 $sidebar = 'right';
 if( $left_sidebar && $right_sidebar )
 $sidebar = 'both';
-$container       = 'container';
+$container       = 'container-fullwidth';
 global $allowedposttags
 
 ?>
 <!--Main Area-->
-<section class="page-title-bar title-left no-subtitle" style="">
+<!--section class="page-title-bar title-left no-subtitle" style="">
     <div class="container">
       <?php onetone_get_breadcrumb(array("before"=>"<div class=''>","after"=>"</div>","show_browse"=>false,"separator"=>'','container'=>'div'));?>
       <div class="clearfix"></div>
     </div>
-  </section>
+  </section-->
 <div class="page-wrap">
   <div class="<?php echo $container;?>">
     <div class="page-inner row <?php echo onetone_get_content_class($sidebar);?>">
