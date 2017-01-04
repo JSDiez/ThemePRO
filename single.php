@@ -6,7 +6,9 @@
  */
 
 get_header(); 
-$enable_page_title_bar = onetone_option('enable_page_title_bar');
+//$enable_page_title_bar = onetone_option('enable_page_title_bar');
+//Disable "page-title-bar" to avoid duplicate this
+$enable_page_title_bar = '0';
 $left_sidebar   = onetone_option('left_sidebar_blog_posts','');
 $right_sidebar  = onetone_option('right_sidebar_blog_posts','');
 $aside          = 'no-aside';
@@ -22,7 +24,7 @@ $aside          = 'both-aside';
 <?php if( $enable_page_title_bar == 'yes' || $enable_page_title_bar == '1' ):?>
 <section class="page-title-bar title-left no-subtitle" style="">
             <div class="container">
-                <hgroup class="page-title">
+                <hgroup class="page-title title">
                     <h1><?php the_title();?></h1>
                 </hgroup>
                 <?php onetone_get_breadcrumb(array("before"=>"<div class=''>","after"=>"</div>","show_browse"=>false,"separator"=>'','container'=>'div'));?> 
