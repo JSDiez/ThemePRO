@@ -1,4 +1,18 @@
 <?php
+//Jesus: remove autoformating in pages
+function custom_wpautop($content) {
+  if (is_attachment() || is_single()) {
+    return wpautop($content);
+  } else {
+    return $content;
+  }
+}
+
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'custom_wpautop');
+?>
+
+<?php
 
 define( 'ONETONE_THEME_BASE_URL', get_template_directory_uri());
 define( 'ONETONE_OPTIONS_FRAMEWORK', get_template_directory().'/admin/' ); 
