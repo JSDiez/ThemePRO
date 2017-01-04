@@ -10,6 +10,10 @@ function custom_wpautop($content) {
 
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'custom_wpautop');
+
+//Jesus: remove admin bar in front
+function my_function_admin_bar(){ return false; }
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 ?>
 
 <?php
