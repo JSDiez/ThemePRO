@@ -1,4 +1,4 @@
-<?php /* Template Name: Jobs Template Profile */
+<?php /* Template Name: Profile: Jobs Template */
 
 get_header(); 
 global $page_meta;
@@ -86,7 +86,7 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
                     wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'onetone' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
                   ?>
                   
-                  <section class="job-container phm">
+                  <section class="job-container pvm">
                   	<div class="container">
                   		<h1 class="content-title"><?php _e("[:es]Ofertas de trabajo[:en]Job offers"); ?></h1>
                   		<div class="row mbs">
@@ -206,7 +206,7 @@ $container_css .= 'padding-bottom:'.$padding_bottom.';';
                     </div>
                     </section>
 
-                    <section id="job-form" class="bg-light-grey phm brd2">
+                    <section id="job-form" class="bg-light-grey pvm brd2">
 	                    <div class="container">
 	                      <?php echo do_shortcode('[contact-form-7 id="203" title="Job form general"]') ?>
 	                    </div>
