@@ -85,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	margin: 20px 0 12px;
 	color: inherit;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -114,9 +115,9 @@ h4 {
 
 .entry-content h4 {
 	color: #C23442;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4;
-	margin: 0px 0 16px;
+	margin: 0;
 }
 
 
@@ -3117,13 +3118,13 @@ ul.list-unordered li:before {
     margin-top: 10px;
 }
 
-.flex-wrapper, .center-content {
+.flex-wrapper, .center-content, .icon-list-wrapper {
 	display: -ms-flex;
 	display: -webkit-flex;
 	display: flex;
 }
 
-.center-content {
+.center-content, .icon-list-wrapper {
   align-items: center;
   justify-content: center;
 }
@@ -3208,6 +3209,7 @@ a.icon-link div {
 
 a.icon-link span {
   display: inline-block;
+  color: #5E5E5E!important;
   position: relative;
 }
 
@@ -3229,7 +3231,6 @@ a.icon-link:hover span:after {
   opacity: 1;
   width: 100%;
 }
-
 
 
 
@@ -3339,8 +3340,9 @@ a.icon-link:hover span:after {
 /* CUSTOMERS HOME SECTION*/
 .customers {}
 
-.icon-customer-container {
+.icon-list-wrapper {
 	margin-top: 50px;
+  text-align: center;
 }
 
 .customers a:hover {
@@ -3436,6 +3438,20 @@ a:hover span.btn-ghost {
 .offers-list .clear {
 	margin-bottom: 0;
 }
+
+
+/* RECENT POSTS */
+#blog .feature-img-box .img-box, #blog .feature-img-box img {
+  max-height: 150px;
+  min-height: 150px;
+}
+
+.img-box.from-top .img-overlay {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+
 
 
 
