@@ -79,7 +79,7 @@
 		else:
 		?>
         <?php if( $section_title != '' ):?>
-        <div class="section-subtitle"><?php echo do_shortcode($section_title);?></div>
+        <h3 class="section-subtitle"><?php echo do_shortcode($section_title);?></h3>
         <?php endif;?>
             <div class="home-section-content">
          <?php 

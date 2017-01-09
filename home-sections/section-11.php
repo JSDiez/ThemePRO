@@ -46,7 +46,7 @@ global $onetone_animated;
        <h1 class="section-title <?php echo $section_title_class; ?>"><?php echo $section_title; ?></h1>
         <?php endif;?>
         <?php if( $section_subtitle != '' ):?>
-        <div class="section-subtitle"><?php echo do_shortcode($section_subtitle);?></div>
+        <h3 class="section-subtitle"><?php echo do_shortcode($section_subtitle);?></h3>
          <?php endif;?>
          
         
